@@ -13,8 +13,13 @@
     margin-bottom: $spacing-8;
 
     @include respond-down(md) {
+      grid-template-columns: 1fr 1fr;
+      gap: $spacing-3;
+    }
+
+    @include respond-down(sm) {
       grid-template-columns: 1fr;
-      gap: $spacing-5;
+      gap: $spacing-4;
     }
   }
 
@@ -23,6 +28,9 @@
     aspect-ratio: 3 / 4;
     overflow: hidden;
     cursor: pointer;
+
+    @include respond-down(md) { aspect-ratio: 4 / 3; }
+    @include respond-down(sm) { aspect-ratio: 16 / 9; }
 
     &:hover {
       .showcase__cardImg { transform: scale(1.06); }

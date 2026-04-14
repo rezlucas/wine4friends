@@ -55,7 +55,7 @@
     grid-template-columns: 1fr auto;
     grid-template-rows: auto auto;
     gap: 2px $spacing-4;
-    padding: $spacing-5 $spacing-6;
+    padding: $spacing-4 $spacing-5;
     background: transparent;
     border: none;
     cursor: pointer;
@@ -164,9 +164,10 @@
 
   &__commissions {
     background: $color-surface;
-    padding: $spacing-9 $spacing-8;
+    padding: $spacing-8 $spacing-7;
 
-    @include respond-down(md) { padding: $spacing-7 $spacing-5; }
+    @include respond-down(md) { padding: $spacing-6 $spacing-5; }
+    @include respond-down(sm) { padding: $spacing-5 $spacing-4; }
   }
 
   &__commissionsHeader {
@@ -239,7 +240,7 @@
 
   &__commissionPct {
     font-family: $font-heading;
-    font-size: $font-size-5xl;
+    font-size: clamp(#{$font-size-3xl}, 6vw, #{$font-size-5xl});
     font-weight: $font-weight-bold;
     color: $color-secondary;
     line-height: 1;

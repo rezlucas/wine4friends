@@ -46,9 +46,6 @@ export default function Hero() {
             <a href="#contato" className="btn btn--primary">
               Quero Ser Embaixador
             </a>
-            <a href="#como-funciona" className="btn btn--ghost">
-              Como Funciona
-            </a>
           </div>
         </div>
       </div>

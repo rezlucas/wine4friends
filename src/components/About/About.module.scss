@@ -34,20 +34,15 @@
 
   &__badge {
     position: absolute;
-    bottom: -$spacing-5;
-    right: -$spacing-5;
+    bottom: $spacing-4;
+    right: $spacing-4;
     background: $color-secondary;
     color: $color-bg-dark;
-    padding: $spacing-5;
+    padding: $spacing-4 $spacing-5;
     @include flex-column;
     align-items: center;
     text-align: center;
     box-shadow: $shadow-xl;
-
-    @include respond-down(sm) {
-      bottom: $spacing-4;
-      right: $spacing-4;
-    }
 
     strong {
       font-family: $font-heading;
@@ -78,7 +73,7 @@
 
   &__title {
     font-family: $font-heading;
-    font-size: $font-size-3xl;
+    font-size: $font-size-2xl;
     font-weight: $font-weight-bold;
     line-height: $line-height-snug;
     color: $color-text;
@@ -88,7 +83,8 @@
       color: $color-secondary;
     }
 
-    @include respond-down(md) { font-size: $font-size-2xl; }
+    @include respond-down(md) { font-size: $font-size-xl; }
+    @include respond-down(sm) { font-size: $font-size-lg; }
   }
 
   &__separator {

@@ -41,7 +41,7 @@
 
   &__cardNum {
     font-family: $font-heading;
-    font-size: 72px;
+    font-size: clamp(40px, 8vw, 72px);
     font-weight: $font-weight-bold;
     color: rgba($color-secondary, 0.08);
     line-height: 1;

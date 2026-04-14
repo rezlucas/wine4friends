@@ -6,19 +6,7 @@ export default function Lifestyle() {
 
       {/* Coluna esquerda — foto de pessoas */}
       <div className={styles.lifestyle__imageCol}>
-        {/*
-         * 📸 IMAGEM ESPERADA: lifestyle-pessoas.jpg
-         * Descrição: Casal ou grupo de amigos (2-3 pessoas) em clima descontraído,
-         * segurando taças de vinho tinto, sorrindo ou conversando animadamente.
-         * Ambiente: mesa posta com velas, varanda ao entardecer, ou adega aconchegante.
-         * Tom: luz quente dourada, cores profundas. Estilo lifestyle de luxo acessível.
-         * Orientação: paisagem ou retrato — deve preencher metade da tela.
-         * Salvar em: src/assets/images/lifestyle-pessoas.jpg
-         */}
-        <div
-          className={styles.lifestyle__img}
-          data-label="📸 src/assets/images/lifestyle-pessoas.jpg — Casal/amigos com taças de vinho, ambiente aconchegante, luz dourada"
-        />
+        <div className={styles.lifestyle__img} />
         <div className={styles.lifestyle__imgOverlay} aria-hidden="true" />
       </div>
 

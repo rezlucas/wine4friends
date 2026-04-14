@@ -43,7 +43,7 @@
   &__bgText {
     position: absolute;
     font-family: $font-display;
-    font-size: clamp(140px, 28vw, 340px);
+    font-size: clamp(72px, 22vw, 340px);
     font-weight: $font-weight-heavy;
     letter-spacing: -0.04em;
     color: transparent;
@@ -146,12 +146,14 @@
 
   &__title {
     font-family: $font-heading;
-    font-size: clamp(#{$font-size-2xl}, 3.2vw, #{$font-size-4xl});
+    font-size: clamp(#{$font-size-xl}, 3.2vw, #{$font-size-4xl});
     font-weight: $font-weight-bold;
     line-height: $line-height-snug;
     color: $color-text-on-dark;
     letter-spacing: $letter-spacing-tight;
     margin: 0;
+
+    @include respond-down(sm) { font-size: $font-size-xl; }
   }
 
   &__titleAccent {

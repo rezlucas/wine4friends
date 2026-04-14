@@ -1,9 +1,10 @@
+import { Wine, Award, MapPin } from 'lucide-react';
 import styles from './About.module.scss';
 
 const PILLARS = [
-  { icon: '🍇', label: 'Importação Própria',  desc: 'Controle total da origem à taça' },
-  { icon: '🏆', label: 'Rótulos Premiados',   desc: 'Portfólio exclusivo e selecionado' },
-  { icon: '📍', label: 'Espírito Santo',       desc: 'Nascidos e expandidos no ES' },
+  { icon: Wine,   label: 'Importação Própria',  desc: 'Controle total da origem à taça' },
+  { icon: Award,  label: 'Rótulos Premiados',   desc: 'Portfólio exclusivo e selecionado' },
+  { icon: MapPin, label: 'Espírito Santo',       desc: 'Nascidos e expandidos no ES' },
 ];
 
 export default function About() {
@@ -27,8 +28,7 @@ export default function About() {
             <span className="eyebrow">Quem Somos</span>
 
             <h2 className={styles.about__title}>
-              Aqui você não recomenda<br />
-              vinho de supermercado.<br />
+              Aqui você não recomenda vinho de supermercado.{' '}
               <em>Você apresenta a exclusividade!</em>
             </h2>
 
@@ -48,9 +48,11 @@ export default function About() {
 
             {/* Pilares */}
             <div className={styles.about__pillars}>
-              {PILLARS.map(({ icon, label, desc }) => (
+              {PILLARS.map(({ icon: Icon, label, desc }) => (
                 <div key={label} className={styles.about__pillar}>
-                  <span className={styles.about__pillarIcon}>{icon}</span>
+                  <span className={styles.about__pillarIcon}>
+                    <Icon size={20} strokeWidth={1.5} />
+                  </span>
                   <div>
                     <strong className={styles.about__pillarLabel}>{label}</strong>
                     <span className={styles.about__pillarDesc}>{desc}</span>
