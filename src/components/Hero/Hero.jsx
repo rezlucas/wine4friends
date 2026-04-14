@@ -9,12 +9,22 @@ const STATS = [
 export default function Hero() {
   return (
     <section className={styles.hero} id="inicio">
+      {/* Camadas de fundo */}
       <div className={styles.hero__bg} aria-hidden="true" />
-      <div className={styles.hero__overlay} aria-hidden="true" />
+      <div className={styles.hero__glow} aria-hidden="true" />
 
+      {/* Texto gigante de fundo */}
+      <span className={styles.hero__bgText} aria-hidden="true">WINE</span>
+
+      {/* Grid principal */}
       <div className={`container ${styles.hero__container}`}>
 
-        {/* Coluna esquerda — texto */}
+        {/* Coluna esquerda — foto de vinho (blends into bg) */}
+        <div className={styles.hero__imageCol}>
+          <div className={styles.hero__imgPlaceholder} />
+        </div>
+
+        {/* Coluna direita — conteúdo */}
         <div className={styles.hero__content}>
           <div className={styles.hero__eyebrowWrap}>
             <span className={styles.hero__eyebrowLine} aria-hidden="true" />
@@ -41,31 +51,18 @@ export default function Hero() {
             </a>
           </div>
         </div>
-
-        {/* Coluna direita — foto de vinho */}
-        <div className={styles.hero__imageCol}>
-          <div className={styles.hero__imgPlaceholder} />
-
-          {/* Badge flutuante */}
-          <div className={styles.hero__imgBadge}>
-            <span className={styles.hero__imgBadgeNum}>R$0</span>
-            <span className={styles.hero__imgBadgeLabel}>para começar</span>
-          </div>
-        </div>
       </div>
 
       {/* Big numbers strip */}
       <div className={styles.hero__stats} aria-label="Números do programa">
         {STATS.map(({ value, label }, i) => (
-          <>
-            <div key={value} className={styles.hero__statItem}>
+          <div key={value} className={styles.hero__statGroup}>
+            {i > 0 && <span className={styles.hero__statDivider} aria-hidden="true" />}
+            <div className={styles.hero__statItem}>
               <strong>{value}</strong>
               <span>{label}</span>
             </div>
-            {i < STATS.length - 1 && (
-              <span key={`div-${i}`} className={styles.hero__statDivider} aria-hidden="true" />
-            )}
-          </>
+          </div>
         ))}
       </div>
 
@@ -89,11 +86,6 @@ export default function Hero() {
             </span>
           ))}
         </div>
-      </div>
-
-      {/* Scroll indicator */}
-      <div className={styles.hero__scroll} aria-hidden="true">
-        <div className={styles.hero__scrollLine} />
       </div>
     </section>
   );
