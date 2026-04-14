@@ -1,0 +1,86 @@
+@use '../../styles/abstracts/variables' as *;
+@use '../../styles/abstracts/mixins' as *;
+
+.testimonials {
+  &__grid {
+    @include grid-auto(300px, $spacing-5);
+  }
+
+  &__card {
+    background: $color-bg;
+    border: 1px solid $color-border;
+    padding: $spacing-7 $spacing-6;
+    @include flex-column;
+    gap: $spacing-5;
+    transition: border-color $transition-base, transform $transition-base;
+
+    &:hover {
+      transform: translateY(-4px);
+      border-color: rgba($color-secondary, 0.35);
+    }
+  }
+
+  &__stars {
+    display: flex;
+    gap: 3px;
+  }
+
+  &__star {
+    font-size: $font-size-sm;
+
+    &--filled { color: $color-secondary; }
+    &--empty  { color: rgba($color-text-muted, 0.3); }
+  }
+
+  &__text {
+    flex: 1;
+    font-family: $font-heading;
+    font-size: $font-size-md;
+    font-style: italic;
+    font-weight: $font-weight-regular;
+    line-height: $line-height-relaxed;
+    color: $color-text-light;
+  }
+
+  &__author {
+    display: flex;
+    align-items: center;
+    gap: $spacing-4;
+    padding-top: $spacing-4;
+    border-top: 1px solid $color-border;
+
+    > div {
+      @include flex-column;
+      gap: $spacing-1;
+    }
+  }
+
+  &__avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: $color-primary;
+    color: $color-text-on-dark;
+    @include flex-center;
+    font-family: $font-display;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-bold;
+    flex-shrink: 0;
+    letter-spacing: 0;
+  }
+
+  &__name {
+    font-style: normal;
+    font-family: $font-body;
+    font-weight: $font-weight-semibold;
+    font-size: $font-size-sm;
+    color: $color-text;
+  }
+
+  &__role {
+    font-family: $font-body;
+    font-size: $font-size-xs;
+    color: $color-text-muted;
+    letter-spacing: $letter-spacing-wide;
+  }
+}

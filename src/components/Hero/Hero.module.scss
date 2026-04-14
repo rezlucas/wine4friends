@@ -1,0 +1,281 @@
+@use '../../styles/abstracts/variables' as *;
+@use '../../styles/abstracts/mixins' as *;
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: $color-bg-dark;
+
+  &__bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 70% 80% at 80% 40%, rgba($color-primary, 0.18) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 60% at 10% 80%, rgba($color-primary-dark, 0.22) 0%, transparent 55%),
+      linear-gradient(135deg, $color-bg-dark 0%, #1A1525 50%, $color-bg-dark 100%);
+
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: repeating-linear-gradient(
+        -45deg,
+        transparent,
+        transparent 80px,
+        rgba($color-secondary, 0.025) 80px,
+        rgba($color-secondary, 0.025) 81px
+      );
+    }
+  }
+
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent 70%, rgba($color-bg-dark, 0.9) 100%);
+    z-index: $z-raised;
+  }
+
+  &__container {
+    position: relative;
+    z-index: $z-raised + 1;
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: $spacing-8;
+    align-items: center;
+    padding-top: $header-height + $spacing-9;
+    padding-bottom: $spacing-8;
+
+    @include respond-down(lg) {
+      grid-template-columns: 1fr;
+      gap: $spacing-7;
+      padding-top: $header-height + $spacing-7;
+    }
+  }
+
+  // ── Coluna de texto ───────────────────────────────────────────────────────
+
+  &__content {
+    @include flex-column;
+    gap: $spacing-6;
+  }
+
+  &__eyebrowWrap {
+    display: flex;
+    align-items: center;
+    gap: $spacing-3;
+  }
+
+  &__eyebrowLine {
+    width: 36px;
+    height: 1px;
+    background: $color-secondary;
+    flex-shrink: 0;
+  }
+
+  &__eyebrow {
+    font-family: $font-body;
+    font-size: $font-size-xs;
+    font-weight: $font-weight-semibold;
+    letter-spacing: $letter-spacing-wider;
+    text-transform: uppercase;
+    color: $color-secondary;
+  }
+
+  &__title {
+    font-family: $font-heading;
+    font-size: clamp(#{$font-size-3xl}, 5vw, #{$font-size-5xl});
+    font-weight: $font-weight-bold;
+    line-height: $line-height-tight;
+    color: $color-text-on-dark;
+    letter-spacing: $letter-spacing-tight;
+    margin: 0;
+  }
+
+  &__titleAccent {
+    font-style: italic;
+    color: $color-secondary;
+  }
+
+  &__description {
+    font-size: $font-size-lg;
+    line-height: $line-height-relaxed;
+    color: rgba($color-text-on-dark, 0.68);
+    max-width: 500px;
+
+    @include respond-down(sm) { font-size: $font-size-md; }
+  }
+
+  &__actions {
+    display: flex;
+    gap: $spacing-4;
+    flex-wrap: wrap;
+  }
+
+  &__proof {
+    display: flex;
+    align-items: center;
+    gap: $spacing-5;
+    padding-top: $spacing-5;
+    border-top: 1px solid rgba($color-text-on-dark, 0.10);
+
+    @include respond-down(sm) { gap: $spacing-4; }
+  }
+
+  &__proofItem {
+    @include flex-column;
+    gap: $spacing-1;
+
+    strong {
+      font-family: $font-heading;
+      font-size: $font-size-xl;
+      font-weight: $font-weight-bold;
+      color: $color-secondary;
+      line-height: 1;
+    }
+
+    span {
+      font-family: $font-body;
+      font-size: $font-size-xs;
+      font-weight: $font-weight-medium;
+      letter-spacing: $letter-spacing-wide;
+      text-transform: uppercase;
+      color: rgba($color-text-on-dark, 0.45);
+    }
+  }
+
+  &__proofDivider {
+    width: 1px;
+    height: 40px;
+    background: rgba($color-text-on-dark, 0.14);
+    flex-shrink: 0;
+  }
+
+  // ── Coluna da foto ────────────────────────────────────────────────────────
+
+  &__imageCol {
+    position: relative;
+    height: 620px;
+
+    @include respond-down(lg) {
+      height: 340px;
+      order: -1; // foto aparece acima do texto no mobile
+    }
+
+    @include respond-down(sm) { height: 260px; }
+  }
+
+  &__imgPlaceholder {
+    position: absolute;
+    inset: 0;
+    background-image: url('../../assets/images/hero-vinho.webp');
+    background-size: cover;
+    background-position: center top;
+  }
+
+  &__imgBadge {
+    position: absolute;
+    bottom: -$spacing-5;
+    left: $spacing-6;
+    background: $color-secondary;
+    color: $color-bg-dark;
+    padding: $spacing-4 $spacing-5;
+    @include flex-column;
+    align-items: center;
+    text-align: center;
+    z-index: 2;
+
+    @include respond-down(lg) { display: none; }
+  }
+
+  &__imgBadgeNum {
+    font-family: $font-heading;
+    font-size: $font-size-2xl;
+    font-weight: $font-weight-bold;
+    line-height: 1;
+  }
+
+  &__imgBadgeLabel {
+    font-family: $font-body;
+    font-size: $font-size-xs;
+    font-weight: $font-weight-medium;
+    letter-spacing: $letter-spacing-wide;
+    text-transform: uppercase;
+    margin-top: 2px;
+  }
+
+  // ── Marquee ───────────────────────────────────────────────────────────────
+
+  &__marqueeWrap {
+    position: relative;
+    z-index: $z-raised + 1;
+    overflow: hidden;
+    background: $color-primary-dark;
+    border-top: 1px solid rgba($color-secondary, 0.18);
+    padding: $spacing-3 0;
+  }
+
+  &__marqueeTrack {
+    display: flex;
+    gap: $spacing-8;
+    animation: marqueeScroll 30s linear infinite;
+    white-space: nowrap;
+    width: max-content;
+  }
+
+  &__marqueeGroup {
+    display: flex;
+    gap: $spacing-8;
+    align-items: center;
+    flex-shrink: 0;
+
+    span {
+      font-family: $font-body;
+      font-size: $font-size-xs;
+      font-weight: $font-weight-semibold;
+      letter-spacing: $letter-spacing-wider;
+      text-transform: uppercase;
+      color: rgba($color-secondary, 0.70);
+    }
+  }
+
+  &__marqueeDot {
+    color: rgba($color-primary-light, 0.65) !important;
+    font-size: 8px !important;
+    letter-spacing: 0 !important;
+  }
+
+  // ── Scroll indicator ──────────────────────────────────────────────────────
+
+  &__scroll {
+    position: absolute;
+    bottom: $spacing-6;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: $z-raised + 1;
+    display: flex;
+    justify-content: center;
+
+    @include respond-down(md) { display: none; }
+  }
+
+  &__scrollLine {
+    width: 1px;
+    height: 60px;
+    background: linear-gradient(to bottom, $color-secondary, transparent);
+    animation: scrollPulse 2s ease-in-out infinite;
+  }
+}
+
+@keyframes marqueeScroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes scrollPulse {
+  0%, 100% { opacity: 0.3; transform: scaleY(1); }
+  50%       { opacity: 1;   transform: scaleY(1.1); }
+}

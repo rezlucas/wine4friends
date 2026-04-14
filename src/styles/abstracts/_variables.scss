@@ -1,0 +1,125 @@
+// =============================================================================
+// VARIABLES — Wine4Friends
+// Paleta e tipografia extraídas do Branding oficial
+// =============================================================================
+
+// Colors — extraídas do PDF de Branding (página paleta)
+$color-primary:        #8B1A35;   // Bordeaux — cor principal da marca
+$color-primary-light:  #B02040;   // Bordeaux claro (hover)
+$color-primary-dark:   #5C0E22;   // Bordeaux escuro (pressed)
+$color-secondary:      #C98046;   // Cobre/Dourado — acento da marca
+$color-secondary-dark: #A86234;   // Cobre escuro
+
+$color-bg:             #1E1F2B;   // Background principal (tema escuro)
+$color-bg-dark:        #13141E;   // Background profundo
+$color-surface:        #252637;   // Superfície de cards
+$color-surface-alt:    #1C1D2A;   // Superfície alternada
+
+$color-text:           #F0EDE8;   // Texto principal (claro sobre escuro)
+$color-text-muted:     #8A8FA8;   // Texto secundário
+$color-text-light:     #C4C8D8;   // Texto suave
+$color-text-on-dark:   #FFFFFF;   // Branco puro
+
+$color-border:         rgba(255, 255, 255, 0.10);
+$color-overlay:        rgba(0, 0, 0, 0.60);
+
+$color-success:        #2D7A4F;
+$color-error:          #C0392B;
+
+// Acento azul-aço (quarta cor do branding)
+$color-accent:         #AFC8D5;
+
+// Typography — fontes da pasta /fonts do projeto
+$font-heading:   'Philosopher', Georgia, serif;          // Serifada elegante — títulos
+$font-display:   'Panton', 'Helvetica Neue', sans-serif; // Display bold — impacto
+$font-body:      'TTNorms', 'Helvetica Neue', sans-serif; // Sans limpa — corpo/UI
+$font-accent:    $font-heading;
+
+$font-size-base:  1rem;       // 16px
+$font-size-xs:    0.75rem;    // 12px
+$font-size-sm:    0.875rem;   // 14px
+$font-size-md:    1rem;       // 16px
+$font-size-lg:    1.25rem;    // 20px
+$font-size-xl:    1.5rem;     // 24px
+$font-size-2xl:   2rem;       // 32px
+$font-size-3xl:   2.5rem;     // 40px
+$font-size-4xl:   3.25rem;    // 52px
+$font-size-5xl:   4rem;       // 64px
+
+$font-weight-light:    300;
+$font-weight-regular:  400;
+$font-weight-medium:   500;
+$font-weight-semibold: 600;
+$font-weight-bold:     700;
+$font-weight-heavy:    900;
+
+$line-height-tight:   1.1;
+$line-height-snug:    1.3;
+$line-height-base:    1.6;
+$line-height-relaxed: 1.75;
+
+$letter-spacing-tight:  -0.02em;
+$letter-spacing-normal:  0;
+$letter-spacing-wide:    0.06em;
+$letter-spacing-wider:   0.12em;
+
+// Spacing
+$spacing-unit: 8px;
+$spacing-0:  0;
+$spacing-1:  $spacing-unit * 0.5;   // 4px
+$spacing-2:  $spacing-unit;          // 8px
+$spacing-3:  $spacing-unit * 1.5;   // 12px
+$spacing-4:  $spacing-unit * 2;     // 16px
+$spacing-5:  $spacing-unit * 3;     // 24px
+$spacing-6:  $spacing-unit * 4;     // 32px
+$spacing-7:  $spacing-unit * 6;     // 48px
+$spacing-8:  $spacing-unit * 8;     // 64px
+$spacing-9:  $spacing-unit * 10;    // 80px
+$spacing-10: $spacing-unit * 15;    // 120px
+
+// Breakpoints
+$bp-xs:  480px;
+$bp-sm:  576px;
+$bp-md:  768px;
+$bp-lg:  992px;
+$bp-xl:  1200px;
+$bp-2xl: 1440px;
+
+// Layout
+$container-max:            1200px;
+$container-padding:        $spacing-6;
+$container-padding-mobile: $spacing-4;
+
+// Border Radius
+$radius-sm:   4px;
+$radius-md:   8px;
+$radius-lg:   16px;
+$radius-xl:   24px;
+$radius-pill: 9999px;
+
+// Shadows
+$shadow-sm:   0 1px 3px rgba(0, 0, 0, 0.20);
+$shadow-md:   0 4px 12px rgba(0, 0, 0, 0.30);
+$shadow-lg:   0 10px 30px rgba(0, 0, 0, 0.40);
+$shadow-xl:   0 20px 50px rgba(0, 0, 0, 0.50);
+$shadow-wine: 0 8px 24px rgba($color-primary, 0.35);
+
+// Transitions
+$transition-fast:   0.15s ease;
+$transition-base:   0.3s ease;
+$transition-slow:   0.5s ease;
+$transition-bounce: 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+// Z-index
+$z-below:   -1;
+$z-base:     0;
+$z-raised:   10;
+$z-dropdown: 100;
+$z-sticky:   200;
+$z-overlay:  300;
+$z-modal:    400;
+$z-toast:    500;
+
+// Header
+$header-height:        80px;
+$header-height-mobile: 64px;

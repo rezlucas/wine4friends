@@ -1,0 +1,167 @@
+@use '../../styles/abstracts/variables' as *;
+@use '../../styles/abstracts/mixins' as *;
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: $z-sticky;
+  height: $header-height;
+  background: linear-gradient(to bottom, rgba($color-bg-dark, 0.92) 0%, transparent 100%);
+  backdrop-filter: blur(2px);
+  transition: background $transition-base, box-shadow $transition-base;
+
+  &--scrolled {
+    background: rgba($color-bg-dark, 0.97);
+    backdrop-filter: blur(16px);
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.06);
+  }
+
+  &__inner {
+    @include flex-between;
+    height: 100%;
+  }
+
+  // Logo
+  &__logo {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    text-decoration: none;
+  }
+
+  &__logoImg {
+    height: 26px;
+    width: auto;
+    object-fit: contain;
+  }
+
+  // Nav desktop
+  &__nav {
+    @include respond-down(lg) { display: none; }
+  }
+
+  &__navList {
+    display: flex;
+    gap: $spacing-6;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__navLink {
+    font-family: $font-body;
+    font-size: $font-size-xs;
+    font-weight: $font-weight-semibold;
+    color: rgba($color-text-on-dark, 0.65);
+    letter-spacing: $letter-spacing-wider;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: color $transition-fast;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: $color-secondary;
+      transition: width $transition-base;
+    }
+
+    &:hover {
+      color: $color-text-on-dark;
+      &::after { width: 100%; }
+    }
+  }
+
+  // CTA desktop
+  &__cta {
+    @include respond-down(lg) { display: none; }
+    font-size: $font-size-xs !important;
+    padding: $spacing-3 $spacing-5 !important;
+    border-radius: 0 !important;
+    letter-spacing: $letter-spacing-wider !important;
+  }
+
+  // Hamburger
+  &__hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    padding: $spacing-2;
+    cursor: pointer;
+    background: none;
+    border: none;
+
+    @include respond-down(lg) { display: flex; }
+
+    span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: $color-text-on-dark;
+      transition: all $transition-base;
+      transform-origin: center;
+    }
+
+    &--open {
+      span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+      span:nth-child(2) { opacity: 0; }
+      span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    }
+  }
+
+  // Drawer mobile
+  &__drawer {
+    position: fixed;
+    top: $header-height;
+    left: 0;
+    right: 0;
+    background: rgba($color-bg-dark, 0.98);
+    backdrop-filter: blur(16px);
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform $transition-base, opacity $transition-base;
+    z-index: $z-sticky;
+    border-bottom: 1px solid rgba($color-secondary, 0.2);
+
+    &--open {
+      transform: translateY(0);
+      opacity: 1;
+      pointer-events: all;
+    }
+  }
+
+  &__drawerList {
+    @include flex-column;
+    padding: $spacing-6 $container-padding-mobile;
+    gap: $spacing-1;
+    list-style: none;
+    margin: 0;
+  }
+
+  &__drawerLink {
+    display: block;
+    padding: $spacing-4 0;
+    font-family: $font-body;
+    font-size: $font-size-lg;
+    font-weight: $font-weight-medium;
+    color: rgba($color-text-on-dark, 0.8);
+    border-bottom: 1px solid rgba($color-text-on-dark, 0.07);
+    text-decoration: none;
+    transition: color $transition-fast;
+
+    &:hover { color: $color-secondary; }
+  }
+
+  &__drawerCta {
+    margin-top: $spacing-5;
+    width: 100%;
+    text-align: center;
+  }
+}

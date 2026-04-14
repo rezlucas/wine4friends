@@ -1,0 +1,14 @@
+// =============================================================================
+// MAIN — Wine4Friends
+// Ponto de entrada global de estilos
+// =============================================================================
+
+// Abstracts
+@use 'abstracts/variables';
+@use 'abstracts/functions';
+@use 'abstracts/mixins';
+
+// Base
+@use 'base/reset';
+@use 'base/typography';
+@use 'base/base';

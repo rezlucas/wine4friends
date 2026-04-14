@@ -1,0 +1,179 @@
+// =============================================================================
+// TYPOGRAPHY — Wine4Friends
+// =============================================================================
+
+@use '../abstracts/variables' as *;
+
+// -----------------------------------------------------------------------------
+// @font-face — Philosopher (serifada elegante — títulos)
+// -----------------------------------------------------------------------------
+
+@font-face {
+  font-family: 'Philosopher';
+  src: url('../../../fonts/Philosopher/Philosopher-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Philosopher';
+  src: url('../../../fonts/Philosopher/Philosopher-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Philosopher';
+  src: url('../../../fonts/Philosopher/Philosopher-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Philosopher';
+  src: url('../../../fonts/Philosopher/Philosopher-BoldItalic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+// -----------------------------------------------------------------------------
+// @font-face — Panton Trial (display bold — impacto visual)
+// -----------------------------------------------------------------------------
+
+@font-face {
+  font-family: 'Panton';
+  src: url('../../../fonts/panton/Panton-Trial-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Panton';
+  src: url('../../../fonts/panton/Panton-Trial-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Panton';
+  src: url('../../../fonts/panton/Panton-Trial-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Panton';
+  src: url('../../../fonts/panton/Panton-Trial-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Panton';
+  src: url('../../../fonts/panton/Panton-Trial-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Panton';
+  src: url('../../../fonts/panton/Panton-Trial-Heavy.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+// -----------------------------------------------------------------------------
+// @font-face — TT Norms (corpo e UI)
+// -----------------------------------------------------------------------------
+
+@font-face {
+  font-family: 'TTNorms';
+  src: url('../../../fonts/TT-Norms-sv/TT%20Norms%20sv/TTNorms-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'TTNorms';
+  src: url('../../../fonts/TT-Norms-sv/TT%20Norms%20sv/TTNorms-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'TTNorms';
+  src: url('../../../fonts/TT-Norms-sv/TT%20Norms%20sv/TTNorms-Italic.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'TTNorms';
+  src: url('../../../fonts/TT-Norms-sv/TT%20Norms%20sv/TTNorms-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'TTNorms';
+  src: url('../../../fonts/TT-Norms-sv/TT%20Norms%20sv/TTNorms-Black.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+// -----------------------------------------------------------------------------
+// Escala tipográfica base
+// -----------------------------------------------------------------------------
+
+body {
+  font-family: $font-body;
+  font-size: $font-size-base;
+  font-weight: $font-weight-regular;
+  line-height: $line-height-base;
+  color: $color-text;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-heading;
+  font-weight: $font-weight-bold;
+  line-height: $line-height-tight;
+  letter-spacing: $letter-spacing-tight;
+  color: $color-text;
+}
+
+h1 { font-size: $font-size-4xl; }
+h2 { font-size: $font-size-3xl; }
+h3 { font-size: $font-size-2xl; }
+h4 { font-size: $font-size-xl;  }
+h5 { font-size: $font-size-lg;  }
+h6 { font-size: $font-size-md;  }
+
+p {
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  color: $color-text-muted;
+}
+
+strong { font-weight: $font-weight-bold; }
+em     { font-style: italic; }
+small  { font-size: $font-size-sm; }
+
+a {
+  color: inherit;
+  text-decoration: none;
+}

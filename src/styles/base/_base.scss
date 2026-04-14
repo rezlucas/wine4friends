@@ -1,0 +1,87 @@
+// =============================================================================
+// BASE — Wine4Friends
+// =============================================================================
+
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+// Fundo global
+body {
+  background-color: $color-bg;
+}
+
+// Container
+.container {
+  width: 100%;
+  max-width: $container-max;
+  margin: 0 auto;
+  padding: 0 $container-padding;
+
+  @include respond-down(sm) {
+    padding: 0 $container-padding-mobile;
+  }
+}
+
+// Seções
+.section {
+  @include section-padding;
+}
+
+.section--dark {
+  background: $color-bg-dark;
+  color: $color-text-on-dark;
+
+  p { color: rgba($color-text-on-dark, 0.75); }
+
+  h1, h2, h3, h4, h5, h6 { color: $color-text-on-dark; }
+}
+
+.section--alt {
+  background: $color-surface;
+}
+
+// Eyebrow label
+.eyebrow {
+  @include eyebrow;
+}
+
+// Títulos de seção
+.section__header {
+  text-align: center;
+  margin-bottom: $spacing-8;
+
+  @include respond-down(md) {
+    margin-bottom: $spacing-7;
+  }
+}
+
+.section__title {
+  @include section-title;
+}
+
+.section__subtitle {
+  @include section-subtitle;
+  margin-top: $spacing-4;
+}
+
+// Botões globais
+.btn {
+  &--primary  { @include btn-primary; }
+  &--secondary { @include btn-secondary; }
+  &--ghost    { @include btn-ghost-light; }
+}
+
+// Separator
+.separator {
+  width: 48px;
+  height: 3px;
+  background: $color-secondary;
+  margin: $spacing-4 auto 0;
+  border-radius: $radius-pill;
+}
+
+// Utilitários visuais
+.text-center { text-align: center; }
+.text-left   { text-align: left; }
+
+.sr-only     { @include visually-hidden; }

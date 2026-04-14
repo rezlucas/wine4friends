@@ -1,0 +1,25 @@
+// =============================================================================
+// FUNCTIONS — Wine4Friends
+// =============================================================================
+
+@use 'variables' as *;
+
+/// Converte px para rem
+@function rem($px, $base: 16) {
+  @return ($px / $base) * 1rem;
+}
+
+/// Adiciona branco à cor (tint)
+@function tint($color, $pct) {
+  @return mix(white, $color, $pct);
+}
+
+/// Adiciona preto à cor (shade)
+@function shade($color, $pct) {
+  @return mix(black, $color, $pct);
+}
+
+/// Multiplicador do spacing unit
+@function sp($n) {
+  @return $spacing-unit * $n;
+}
