@@ -1,9 +1,9 @@
 import styles from './About.module.scss';
 
 const PILLARS = [
-  { icon: '🍇', label: 'Importação Própria', desc: 'Controle total da origem à taça' },
-  { icon: '🏆', label: 'Rótulos Premiados',  desc: 'Portfólio exclusivo e selecionado' },
-  { icon: '📍', label: 'Espírito Santo',      desc: 'Nascidos e expandidos no ES' },
+  { icon: '🍇', label: 'Importação Própria',  desc: 'Controle total da origem à taça' },
+  { icon: '🏆', label: 'Rótulos Premiados',   desc: 'Portfólio exclusivo e selecionado' },
+  { icon: '📍', label: 'Espírito Santo',       desc: 'Nascidos e expandidos no ES' },
 ];
 
 export default function About() {
@@ -14,19 +14,7 @@ export default function About() {
 
           {/* Visual — foto de pessoas + badge */}
           <div className={styles.about__imageWrap}>
-            {/*
-             * 📸 IMAGEM ESPERADA: sobre-pessoas.jpg
-             * Descrição: Grupo de amigos (3-4 pessoas) brindando com taças de vinho tinto,
-             * ambiente íntimo e aconchegante — sala, varanda ou restaurante.
-             * Tom de cor quente, luz suave. Rostos sorridentes, energia descontraída.
-             * Referência: imagem 2 enviada (pessoas juntas, vibe lifestyle).
-             * Orientação: retrato (vertical), proporção 4:5.
-             * Salvar em: src/assets/images/sobre-pessoas.jpg
-             */}
-            <div
-              className={styles.about__imgPlaceholder}
-              data-label="📸 src/assets/images/sobre-pessoas.jpg — Amigos brindando com vinhos, ambiente aconchegante, luz quente"
-            />
+            <div className={styles.about__imgPlaceholder} />
 
             <div className={styles.about__badge}>
               <strong>+20</strong>
@@ -39,22 +27,23 @@ export default function About() {
             <span className="eyebrow">Quem Somos</span>
 
             <h2 className={styles.about__title}>
-              Uma nova marca para<br />
-              <em>brindar à vida</em>
+              Aqui você não recomenda<br />
+              vinho de supermercado.<br />
+              <em>Você apresenta a exclusividade!</em>
             </h2>
 
             <div className={styles.about__separator} aria-hidden="true" />
 
             <p className={styles.about__text}>
-              A <strong>Wine4Friends</strong> é uma marca do <strong>Grupo Uaine</strong> — o maior grupo
-              enogastronômico do Espírito Santo, com mais de duas décadas de atuação no mercado
-              de vinhos e operação em vários estados do Brasil.
+              A sua influência já define escolhas de vinhos que seus amigos compram.
+              Transformamos essa autoridade que você tem em dinheiro.
             </p>
 
             <p className={styles.about__text}>
-              Nascemos para conectar pessoas ao universo do vinho com segurança, credibilidade e
-              excelência. Nossa importação própria garante controle total de qualidade, do vinhedo
-              à sua taça — com rótulos exclusivos que você não encontra no supermercado.
+              A <strong>Wine4Friends</strong> é uma marca do <strong>Grupo Uaine</strong> — o maior grupo
+              enogastronômico do Espírito Santo, com mais de duas décadas de atuação e operação
+              em vários estados do Brasil. Acesso direto a um portfólio importado e premiado,
+              curado por quem entende do assunto.
             </p>
 
             {/* Pilares */}

@@ -87,9 +87,9 @@
 
   &__title {
     font-family: $font-heading;
-    font-size: clamp(#{$font-size-3xl}, 5vw, #{$font-size-5xl});
+    font-size: clamp(#{$font-size-2xl}, 4vw, #{$font-size-4xl});
     font-weight: $font-weight-bold;
-    line-height: $line-height-tight;
+    line-height: $line-height-snug;
     color: $color-text-on-dark;
     letter-spacing: $letter-spacing-tight;
     margin: 0;
@@ -115,45 +115,6 @@
     flex-wrap: wrap;
   }
 
-  &__proof {
-    display: flex;
-    align-items: center;
-    gap: $spacing-5;
-    padding-top: $spacing-5;
-    border-top: 1px solid rgba($color-text-on-dark, 0.10);
-
-    @include respond-down(sm) { gap: $spacing-4; }
-  }
-
-  &__proofItem {
-    @include flex-column;
-    gap: $spacing-1;
-
-    strong {
-      font-family: $font-heading;
-      font-size: $font-size-xl;
-      font-weight: $font-weight-bold;
-      color: $color-secondary;
-      line-height: 1;
-    }
-
-    span {
-      font-family: $font-body;
-      font-size: $font-size-xs;
-      font-weight: $font-weight-medium;
-      letter-spacing: $letter-spacing-wide;
-      text-transform: uppercase;
-      color: rgba($color-text-on-dark, 0.45);
-    }
-  }
-
-  &__proofDivider {
-    width: 1px;
-    height: 40px;
-    background: rgba($color-text-on-dark, 0.14);
-    flex-shrink: 0;
-  }
-
   // ── Coluna da foto ────────────────────────────────────────────────────────
 
   &__imageCol {
@@ -162,7 +123,7 @@
 
     @include respond-down(lg) {
       height: 340px;
-      order: -1; // foto aparece acima do texto no mobile
+      order: -1;
     }
 
     @include respond-down(sm) { height: 260px; }
@@ -205,6 +166,59 @@
     letter-spacing: $letter-spacing-wide;
     text-transform: uppercase;
     margin-top: 2px;
+  }
+
+  // ── Big numbers strip ─────────────────────────────────────────────────────
+
+  &__stats {
+    position: relative;
+    z-index: $z-raised + 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: $spacing-10;
+    padding: $spacing-6 $spacing-5;
+    background: rgba($color-bg-dark, 0.70);
+    border-top: 1px solid rgba($color-secondary, 0.18);
+    backdrop-filter: blur(8px);
+
+    @include respond-down(sm) {
+      gap: $spacing-6;
+      padding: $spacing-5 $spacing-4;
+    }
+  }
+
+  &__statItem {
+    @include flex-column;
+    align-items: center;
+    text-align: center;
+    gap: $spacing-1;
+
+    strong {
+      font-family: $font-heading;
+      font-size: $font-size-3xl;
+      font-weight: $font-weight-bold;
+      color: $color-secondary;
+      line-height: 1;
+
+      @include respond-down(sm) { font-size: $font-size-2xl; }
+    }
+
+    span {
+      font-family: $font-body;
+      font-size: $font-size-xs;
+      font-weight: $font-weight-medium;
+      letter-spacing: $letter-spacing-wider;
+      text-transform: uppercase;
+      color: rgba($color-text-on-dark, 0.45);
+    }
+  }
+
+  &__statDivider {
+    width: 1px;
+    height: 40px;
+    background: rgba($color-text-on-dark, 0.14);
+    flex-shrink: 0;
   }
 
   // ── Marquee ───────────────────────────────────────────────────────────────

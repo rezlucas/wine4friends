@@ -16,94 +16,182 @@
     pointer-events: none;
   }
 
-  // Grid de cards de benefícios
-  &__grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2px;
-    background: rgba($color-text-on-dark, 0.05);
-    margin-bottom: $spacing-10;
+  // ── Accordion com imagem ──────────────────────────────────────────────────
 
-    @include respond-down(lg) { grid-template-columns: repeat(2, 1fr); }
-    @include respond-down(sm) { grid-template-columns: 1fr; }
+  &__accordion {
+    display: grid;
+    grid-template-columns: 55% 45%;
+    gap: 0;
+    margin-bottom: $spacing-10;
+    border: 1px solid rgba($color-text-on-dark, 0.07);
+
+    @include respond-down(lg) {
+      grid-template-columns: 1fr;
+    }
   }
 
-  &__card {
-    padding: $spacing-6;
-    background: $color-surface;
+  &__accordionItems {
     @include flex-column;
-    gap: $spacing-3;
+    border-right: 1px solid rgba($color-text-on-dark, 0.07);
+
+    @include respond-down(lg) { border-right: none; }
+  }
+
+  &__accordionItem {
+    border-bottom: 1px solid rgba($color-text-on-dark, 0.07);
+
+    &:last-child { border-bottom: none; }
+
+    &--open {
+      .benefits__accordionHeader {
+        background: rgba($color-primary, 0.08);
+      }
+    }
+  }
+
+  &__accordionHeader {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto;
+    gap: 2px $spacing-4;
+    padding: $spacing-5 $spacing-6;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    text-align: left;
     transition: background $transition-base;
 
-    &:hover { background: rgba($color-primary, 0.12); }
+    &:hover { background: rgba($color-primary, 0.06); }
   }
 
-  &__cardIcon {
-    font-size: 2rem;
-    line-height: 1;
-    margin-bottom: $spacing-1;
+  &__accordionMeta {
+    grid-column: 1;
+    grid-row: 1;
+    font-family: $font-body;
+    font-size: $font-size-xs;
+    font-weight: $font-weight-semibold;
+    letter-spacing: $letter-spacing-wider;
+    text-transform: uppercase;
+    color: $color-secondary;
   }
 
-  &__cardTitle {
+  &__accordionTitle {
+    grid-column: 1;
+    grid-row: 2;
     font-family: $font-body;
     font-size: $font-size-md;
     font-weight: $font-weight-semibold;
     color: $color-text;
-    line-height: $line-height-snug;
-    text-transform: uppercase;
     letter-spacing: $letter-spacing-wide;
+    text-transform: uppercase;
   }
 
-  &__cardDesc {
+  &__accordionToggle {
+    grid-column: 2;
+    grid-row: 1 / 3;
+    align-self: center;
+    font-family: $font-heading;
+    font-size: $font-size-xl;
+    font-weight: $font-weight-light;
+    color: $color-secondary;
+    line-height: 1;
+    width: 28px;
+    text-align: center;
+    flex-shrink: 0;
+  }
+
+  &__accordionBody {
+    display: grid;
+    grid-template-rows: 0fr;
+    overflow: hidden;
+    transition: grid-template-rows 0.35s ease;
+
+    .benefits__accordionItem--open & {
+      grid-template-rows: 1fr;
+    }
+
+    > * {
+      overflow: hidden;
+    }
+  }
+
+  &__accordionDesc {
     font-size: $font-size-sm;
     line-height: $line-height-relaxed;
     color: $color-text-muted;
+    padding: 0 $spacing-6 $spacing-5;
   }
 
-  // Bloco de comissões
+  &__accordionCta {
+    display: inline-block;
+    font-family: $font-body;
+    font-size: $font-size-xs;
+    font-weight: $font-weight-semibold;
+    letter-spacing: $letter-spacing-wide;
+    text-transform: uppercase;
+    color: $color-secondary;
+    text-decoration: none;
+    padding: 0 $spacing-6 $spacing-5;
+    transition: opacity $transition-fast;
+
+    &:hover { opacity: 0.75; }
+  }
+
+  &__accordionImage {
+    position: relative;
+    overflow: hidden;
+    min-height: 400px;
+
+    @include respond-down(lg) {
+      min-height: 300px;
+      order: -1;
+    }
+
+    img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  // ── Comissões ─────────────────────────────────────────────────────────────
+
   &__commissions {
     background: $color-surface;
     padding: $spacing-9 $spacing-8;
 
-    @include respond-down(md) {
-      padding: $spacing-7 $spacing-5;
-    }
+    @include respond-down(md) { padding: $spacing-7 $spacing-5; }
   }
 
   &__commissionsHeader {
-    @include flex-between;
-    align-items: flex-start;
-    gap: $spacing-6;
     margin-bottom: $spacing-8;
-
-    @include respond-down(md) {
-      flex-direction: column;
-      gap: $spacing-5;
-    }
   }
 
   &__commissionsTitle {
     font-family: $font-heading;
-    font-size: $font-size-2xl;
+    font-size: $font-size-3xl;
     font-weight: $font-weight-bold;
     color: $color-text;
     line-height: $line-height-snug;
-    margin: $spacing-3 0 0;
+    margin: $spacing-3 0 $spacing-4;
 
-    @include respond-down(md) { font-size: $font-size-xl; }
+    em {
+      font-style: italic;
+      color: $color-secondary;
+    }
+
+    @include respond-down(md) { font-size: $font-size-2xl; }
   }
 
   &__commissionsNote {
-    font-size: $font-size-sm;
+    font-size: $font-size-md;
     line-height: $line-height-relaxed;
     color: $color-text-muted;
-    max-width: 280px;
-    text-align: right;
-
-    @include respond-down(md) {
-      text-align: left;
-      max-width: 100%;
-    }
+    font-weight: $font-weight-medium;
   }
 
   &__commissionGrid {
@@ -111,6 +199,7 @@
     grid-template-columns: repeat(4, 1fr);
     gap: 2px;
     background: rgba($color-secondary, 0.12);
+    margin-bottom: $spacing-6;
 
     @include respond-down(md) { grid-template-columns: repeat(2, 1fr); }
     @include respond-down(sm) { grid-template-columns: 1fr; }
@@ -167,5 +256,37 @@
     letter-spacing: $letter-spacing-wide;
     text-transform: uppercase;
     color: $color-text-muted;
+  }
+
+  // ── Bullets ───────────────────────────────────────────────────────────────
+
+  &__commissionBullets {
+    display: flex;
+    gap: $spacing-7;
+    flex-wrap: wrap;
+    padding-top: $spacing-5;
+    border-top: 1px solid rgba($color-text-on-dark, 0.07);
+
+    @include respond-down(sm) {
+      flex-direction: column;
+      gap: $spacing-3;
+    }
+  }
+
+  &__commissionBullet {
+    display: flex;
+    align-items: center;
+    gap: $spacing-3;
+    font-family: $font-body;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-medium;
+    color: $color-text-muted;
+    letter-spacing: $letter-spacing-wide;
+  }
+
+  &__commissionBulletIcon {
+    color: $color-secondary;
+    font-size: 7px;
+    flex-shrink: 0;
   }
 }

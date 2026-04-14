@@ -1,5 +1,11 @@
 import styles from './Hero.module.scss';
 
+const STATS = [
+  { value: '+20',     label: 'Anos de Mercado' },
+  { value: '50+',     label: 'Rótulos Disponíveis' },
+  { value: 'Até 15%', label: 'de Comissão' },
+];
+
 export default function Hero() {
   return (
     <section className={styles.hero} id="inicio">
@@ -12,19 +18,18 @@ export default function Hero() {
         <div className={styles.hero__content}>
           <div className={styles.hero__eyebrowWrap}>
             <span className={styles.hero__eyebrowLine} aria-hidden="true" />
-            <span className={styles.hero__eyebrow}>Programa de Embaixadores</span>
+            <span className={styles.hero__eyebrow}>Uma marca Uaine Group · Pré-Lançamento</span>
           </div>
 
           <h1 className={styles.hero__title}>
-            Transforme seu amor<br />
-            por vinhos em{' '}
-            <em className={styles.hero__titleAccent}>renda real</em>
+            Beber vinho sempre foi um prazer.<br />
+            Agora também pode ser{' '}
+            <em className={styles.hero__titleAccent}>seu negócio!</em>
           </h1>
 
           <p className={styles.hero__description}>
-            Você já indica vinhos para amigos. Agora pode ganhar por isso — com o portfólio
-            importado e exclusivo da Wine4Friends, sustentado por mais de duas décadas de
-            excelência enogastronômica do Grupo Uaine.
+            O Wine4Friends transforma momentos entre amigos em uma fonte de renda.
+            Seu bom gosto por vinhos agora vale dinheiro.
           </p>
 
           <div className={styles.hero__actions}>
@@ -35,40 +40,11 @@ export default function Hero() {
               Como Funciona
             </a>
           </div>
-
-          {/* Social proof */}
-          <div className={styles.hero__proof}>
-            <div className={styles.hero__proofItem}>
-              <strong>+20</strong>
-              <span>Anos no Mercado</span>
-            </div>
-            <div className={styles.hero__proofDivider} aria-hidden="true" />
-            <div className={styles.hero__proofItem}>
-              <strong>Até 15%</strong>
-              <span>de Comissão</span>
-            </div>
-            <div className={styles.hero__proofDivider} aria-hidden="true" />
-            <div className={styles.hero__proofItem}>
-              <strong>Todo Brasil</strong>
-              <span>Entrega Inclusa</span>
-            </div>
-          </div>
         </div>
 
         {/* Coluna direita — foto de vinho */}
         <div className={styles.hero__imageCol}>
-          {/*
-           * 📸 IMAGEM ESPERADA: hero-vinho.jpg
-           * Descrição: Taça de vinho tinto sendo generosamente servida, close-up dramático.
-           * Fundo muito escuro (quase preto). Reflexos avermelhados no líquido.
-           * Orientação: retrato (vertical). Estilo: Editorial de luxo.
-           * Referência: imagem 1 enviada (copo grande, dark background, red liquid splash).
-           * Salvar em: src/assets/images/hero-vinho.jpg
-           */}
-          <div
-            className={styles.hero__imgPlaceholder}
-            data-label="📸 src/assets/images/hero-vinho.jpg — Taça de vinho tinto sendo servida, close-up dramático, fundo escuro"
-          />
+          <div className={styles.hero__imgPlaceholder} />
 
           {/* Badge flutuante */}
           <div className={styles.hero__imgBadge}>
@@ -76,6 +52,21 @@ export default function Hero() {
             <span className={styles.hero__imgBadgeLabel}>para começar</span>
           </div>
         </div>
+      </div>
+
+      {/* Big numbers strip */}
+      <div className={styles.hero__stats} aria-label="Números do programa">
+        {STATS.map(({ value, label }, i) => (
+          <>
+            <div key={value} className={styles.hero__statItem}>
+              <strong>{value}</strong>
+              <span>{label}</span>
+            </div>
+            {i < STATS.length - 1 && (
+              <span key={`div-${i}`} className={styles.hero__statDivider} aria-hidden="true" />
+            )}
+          </>
+        ))}
       </div>
 
       {/* Marquee */}
