@@ -18,8 +18,9 @@
     overflow: hidden;
 
     @include respond-down(md) {
-      min-height: 360px;
-      order: 1;
+      height: 65vh;
+      min-height: 400px;
+      order: 2; // imagem abaixo do texto
     }
   }
 
@@ -37,6 +38,7 @@
   &__imgOverlay {
     position: absolute;
     inset: 0;
+    // Desktop: funde à direita (onde está o texto)
     background: linear-gradient(
       to right,
       transparent 60%,
@@ -44,11 +46,12 @@
     );
     pointer-events: none;
 
+    // Mobile: imagem abaixo do texto, funde no topo
     @include respond-down(md) {
       background: linear-gradient(
         to bottom,
-        transparent 60%,
-        $color-bg-dark 100%
+        $color-bg-dark 0%,
+        transparent 20%
       );
     }
   }
@@ -67,7 +70,7 @@
     }
 
     @include respond-down(md) {
-      order: 2;
+      order: 1; // texto acima da imagem
       padding: $spacing-7 $spacing-5;
     }
   }
