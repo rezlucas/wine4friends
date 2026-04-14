@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import styles from './Benefits.module.scss';
-import lifestyleImg from '../../assets/images/sobre-pessoas.webp';
+import lifestyleImg from '../../assets/images/hero-vinho.webp';
 
 const BENEFITS = [
   {
