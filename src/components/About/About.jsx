@@ -1,5 +1,6 @@
 import { Wine, Award, MapPin } from 'lucide-react';
 import styles from './About.module.scss';
+import WineBottleIcon from '../ui/WineBottleIcon';
 
 const PILLARS = [
   { icon: Wine,   label: 'Importação Própria',  desc: 'Controle total da origem à taça' },
@@ -32,7 +33,7 @@ export default function About() {
               <em>Você apresenta a exclusividade!</em>
             </h2>
 
-            <div className={styles.about__separator} aria-hidden="true" />
+            <WineBottleIcon className={styles.about__separator} width={44} />
 
             <p className={styles.about__text}>
               A sua influência já define escolhas de vinhos que seus amigos compram.

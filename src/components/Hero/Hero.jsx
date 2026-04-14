@@ -1,4 +1,5 @@
 import styles from './Hero.module.scss';
+import WineBottleIcon from '../ui/WineBottleIcon';
 
 const STATS = [
   { value: '+20',     label: 'Anos de Mercado' },
@@ -27,7 +28,7 @@ export default function Hero() {
         {/* Coluna direita — conteúdo */}
         <div className={styles.hero__content}>
           <div className={styles.hero__eyebrowWrap}>
-            <span className={styles.hero__eyebrowLine} aria-hidden="true" />
+            <WineBottleIcon className={styles.hero__eyebrowLine} width={36} />
             <span className={styles.hero__eyebrow}>Uma marca Uaine Group · Pré-Lançamento</span>
           </div>
 

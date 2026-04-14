@@ -129,10 +129,9 @@
   }
 
   &__eyebrowLine {
-    width: 36px;
-    height: 1px;
-    background: $color-secondary;
+    color: $color-secondary;
     flex-shrink: 0;
+    opacity: 0.85;
   }
 
   &__eyebrow {

@@ -1,4 +1,5 @@
 import styles from './Lifestyle.module.scss';
+import WineBottleIcon from '../ui/WineBottleIcon';
 
 export default function Lifestyle() {
   return (
@@ -19,7 +20,7 @@ export default function Lifestyle() {
           <em>É conexão.</em>
         </h2>
 
-        <div className={styles.lifestyle__separator} aria-hidden="true" />
+        <WineBottleIcon className={styles.lifestyle__separator} width={44} />
 
         <p className={styles.lifestyle__text}>
           Cada garrafa carregada pela Wine4Friends foi escolhida a dedo — de vinhedos

@@ -88,9 +88,9 @@
   }
 
   &__separator {
-    width: 48px;
-    height: 3px;
-    background: $color-secondary;
+    color: $color-secondary;
+    flex-shrink: 0;
+    opacity: 0.90;
   }
 
   &__text {
