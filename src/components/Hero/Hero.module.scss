@@ -85,12 +85,12 @@
     margin-left: -$container-padding; // sangra até a borda
 
     @include respond-down(lg) {
-      height: 380px;
-      margin-left: 0;
-      order: -1;
+      height: 70vh;
+      min-height: 420px;
+      margin-left: -$container-padding-mobile;
+      margin-right: -$container-padding-mobile;
+      order: 1; // aparece abaixo do texto
     }
-
-    @include respond-down(sm) { height: 280px; }
   }
 
   &__imgPlaceholder {
@@ -99,7 +99,7 @@
     background-image: url('../../assets/images/hero-taca.webp');
     background-size: cover;
     background-position: center top;
-    // Funde a imagem com o fundo escuro nas bordas
+    // Desktop: funde nas bordas laterais e verticais
     mask-image:
       linear-gradient(to right,  black 30%, transparent 95%),
       linear-gradient(to bottom, transparent 2%, black 12%, black 85%, transparent 100%);
@@ -108,6 +108,12 @@
       linear-gradient(to right,  black 30%, transparent 95%),
       linear-gradient(to bottom, transparent 2%, black 12%, black 85%, transparent 100%);
     -webkit-mask-composite: source-in;
+
+    // Mobile: imagem abaixo do texto, funde apenas no topo
+    @include respond-down(lg) {
+      mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 100%);
+      -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 100%);
+    }
   }
 
   // ── Coluna de texto ───────────────────────────────────────────────────────
