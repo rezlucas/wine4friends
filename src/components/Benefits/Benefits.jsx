@@ -111,12 +111,12 @@ export default function Benefits() {
                 </button>
 
                 <div className={styles.benefits__accordionBody}>
-                  <p className={styles.benefits__accordionDesc}>{item.description}</p>
-                  {openItem === i && (
+                  <div className={styles.benefits__accordionBodyInner}>
+                    <p className={styles.benefits__accordionDesc}>{item.description}</p>
                     <a href="#contato" className={styles.benefits__accordionCta}>
                       Quero fazer parte →
                     </a>
-                  )}
+                  </div>
                 </div>
               </div>
             ))}

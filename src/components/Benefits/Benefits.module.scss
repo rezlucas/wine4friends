@@ -104,23 +104,25 @@
   &__accordionBody {
     display: grid;
     grid-template-rows: 0fr;
-    overflow: hidden;
     transition: grid-template-rows 0.35s ease;
 
     .benefits__accordionItem--open & {
       grid-template-rows: 1fr;
     }
+  }
 
-    > * {
-      overflow: hidden;
-    }
+  &__accordionBodyInner {
+    min-height: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
   }
 
   &__accordionDesc {
     font-size: $font-size-sm;
     line-height: $line-height-relaxed;
     color: $color-text-muted;
-    padding: 0 $spacing-6 $spacing-5;
+    padding: $spacing-3 $spacing-6 $spacing-4;
   }
 
   &__accordionCta {
