@@ -217,4 +217,49 @@
     line-height: $line-height-relaxed;
     letter-spacing: $letter-spacing-wide;
   }
+
+  &__errorMsg {
+    font-family: $font-body;
+    font-size: $font-size-sm;
+    color: $color-error;
+    text-align: center;
+  }
+
+  // ── Estado de sucesso ─────────────────────────────────────────────────────
+
+  &__success {
+    padding: $spacing-9 $spacing-7;
+    @include flex-column;
+    align-items: center;
+    text-align: center;
+    gap: $spacing-4;
+  }
+
+  &__successIcon {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: rgba($color-secondary, 0.15);
+    border: 1px solid $color-secondary;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: $font-size-xl;
+    color: $color-secondary;
+    flex-shrink: 0;
+    align-self: center;
+  }
+
+  &__success strong {
+    font-family: $font-heading;
+    font-size: $font-size-xl;
+    color: $color-text;
+  }
+
+  &__success p {
+    font-size: $font-size-sm;
+    color: $color-text-muted;
+    line-height: $line-height-relaxed;
+    max-width: 280px;
+  }
 }

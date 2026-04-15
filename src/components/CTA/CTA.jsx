@@ -1,5 +1,9 @@
+import { useState } from 'react';
 import styles from './CTA.module.scss';
 import logo from '../../assets/logos/wine4friends-logo-negativa.png';
+
+// Cole aqui a URL gerada no Google Apps Script após a implantação
+const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxrhMnfehuy_tnkJhHtu3pbObii52iQgg3oWYQunTVRE6sqfVvB92v1PnL3WDSGZ1Kv/exec';
 
 const LIST_ITEMS = [
   'Sem custo para entrar, zero investimento inicial',
@@ -10,7 +14,33 @@ const LIST_ITEMS = [
   'Logística especializada em todo o Brasil',
 ];
 
+const INITIAL = { nome: '', telefone: '', email: '', cidade: '' };
+
 export default function CTA() {
+  const [fields, setFields] = useState(INITIAL);
+  const [status, setStatus] = useState('idle'); // idle | loading | success | error
+
+  const handleChange = (e) => {
+    setFields((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus('loading');
+    try {
+      await fetch(APPS_SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(fields),
+      });
+      setStatus('success');
+      setFields(INITIAL);
+    } catch {
+      setStatus('error');
+    }
+  };
+
   return (
     <section className={styles.cta} id="contato">
 
@@ -35,7 +65,7 @@ export default function CTA() {
         <div className="container">
           <div className={styles.cta__grid}>
 
-            {/* Lado esquerdo — texto e lista */}
+            {/* Lado esquerdo */}
             <div className={styles.cta__left}>
               <span className="eyebrow">Pré-Lançamento Exclusivo</span>
 
@@ -67,60 +97,90 @@ export default function CTA() {
                 <span className={styles.cta__formSubtitle}>Pré-Cadastro Exclusivo</span>
               </div>
 
-              <form className={styles.cta__form} onSubmit={(e) => e.preventDefault()}>
-                <div className={styles.cta__field}>
-                  <label className={styles.cta__label}>Nome Completo</label>
-                  <input
-                    type="text"
-                    placeholder="Seu nome"
-                    className={styles.cta__input}
-                    autoComplete="name"
-                    required
-                  />
+              {status === 'success' ? (
+                <div className={styles.cta__success}>
+                  <span className={styles.cta__successIcon}>✓</span>
+                  <strong>Cadastro realizado!</strong>
+                  <p>Entraremos em contato em breve pelo WhatsApp ou e-mail informado.</p>
                 </div>
+              ) : (
+                <form className={styles.cta__form} onSubmit={handleSubmit}>
+                  <div className={styles.cta__field}>
+                    <label className={styles.cta__label}>Nome Completo</label>
+                    <input
+                      type="text"
+                      name="nome"
+                      value={fields.nome}
+                      onChange={handleChange}
+                      placeholder="Seu nome"
+                      className={styles.cta__input}
+                      autoComplete="name"
+                      required
+                    />
+                  </div>
 
-                <div className={styles.cta__field}>
-                  <label className={styles.cta__label}>Telefone / WhatsApp</label>
-                  <input
-                    type="tel"
-                    placeholder="(27) 9 0000-0000"
-                    className={styles.cta__input}
-                    autoComplete="tel"
-                    required
-                  />
-                </div>
+                  <div className={styles.cta__field}>
+                    <label className={styles.cta__label}>Telefone / WhatsApp</label>
+                    <input
+                      type="tel"
+                      name="telefone"
+                      value={fields.telefone}
+                      onChange={handleChange}
+                      placeholder="(27) 9 0000-0000"
+                      className={styles.cta__input}
+                      autoComplete="tel"
+                      required
+                    />
+                  </div>
 
-                <div className={styles.cta__field}>
-                  <label className={styles.cta__label}>E-mail</label>
-                  <input
-                    type="email"
-                    placeholder="seu@email.com.br"
-                    className={styles.cta__input}
-                    autoComplete="email"
-                    required
-                  />
-                </div>
+                  <div className={styles.cta__field}>
+                    <label className={styles.cta__label}>E-mail</label>
+                    <input
+                      type="email"
+                      name="email"
+                      value={fields.email}
+                      onChange={handleChange}
+                      placeholder="seu@email.com.br"
+                      className={styles.cta__input}
+                      autoComplete="email"
+                      required
+                    />
+                  </div>
 
-                <div className={styles.cta__field}>
-                  <label className={styles.cta__label}>Cidade onde Reside</label>
-                  <input
-                    type="text"
-                    placeholder="Ex: Vitória, ES"
-                    className={styles.cta__input}
-                    autoComplete="address-level2"
-                    required
-                  />
-                </div>
+                  <div className={styles.cta__field}>
+                    <label className={styles.cta__label}>Cidade onde Reside</label>
+                    <input
+                      type="text"
+                      name="cidade"
+                      value={fields.cidade}
+                      onChange={handleChange}
+                      placeholder="Ex: Vitória, ES"
+                      className={styles.cta__input}
+                      autoComplete="address-level2"
+                      required
+                    />
+                  </div>
 
-                <button type="submit" className={`btn btn--primary ${styles.cta__submit}`}>
-                  Garantir Minha Vaga →
-                </button>
+                  {status === 'error' && (
+                    <p className={styles.cta__errorMsg}>
+                      Erro ao enviar. Tente novamente ou entre em contato pelo WhatsApp.
+                    </p>
+                  )}
 
-                <p className={styles.cta__disclaimer}>
-                  Ao se cadastrar você concorda com a política de privacidade.
-                  Suas informações são tratadas com total sigilo.
-                </p>
-              </form>
+                  <button
+                    type="submit"
+                    className={`btn btn--primary ${styles.cta__submit}`}
+                    disabled={status === 'loading'}
+                  >
+                    {status === 'loading' ? 'Enviando...' : 'Garantir Minha Vaga →'}
+                  </button>
+
+                  <p className={styles.cta__disclaimer}>
+                    Ao se cadastrar você concorda com a política de privacidade.
+                    Suas informações são tratadas com total sigilo.
+                  </p>
+                </form>
+              )}
             </div>
 
           </div>
