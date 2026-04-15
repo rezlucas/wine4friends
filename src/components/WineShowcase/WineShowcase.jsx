@@ -62,14 +62,6 @@ export default function WineShowcase() {
           ))}
         </div>
 
-        <div className={styles.showcase__footer}>
-          <p className={styles.showcase__footerText}>
-            +50 rótulos disponíveis no portfólio exclusivo Wine4Friends
-          </p>
-          <a href="#contato" className="btn btn--ghost">
-            Ver Portfólio Completo
-          </a>
-        </div>
       </div>
     </section>
   );
