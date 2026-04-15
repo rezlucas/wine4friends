@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import styles from './CTA.module.scss';
 import logo from '../../assets/logos/wine4friends-logo-negativa.png';
+import CityAutocomplete from '../ui/CityAutocomplete';
 
 // Cole aqui a URL gerada no Google Apps Script após a implantação
 const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxrhMnfehuy_tnkJhHtu3pbObii52iQgg3oWYQunTVRE6sqfVvB92v1PnL3WDSGZ1Kv/exec';
@@ -149,14 +150,11 @@ export default function CTA() {
 
                   <div className={styles.cta__field}>
                     <label className={styles.cta__label}>Cidade onde Reside</label>
-                    <input
-                      type="text"
-                      name="cidade"
+                    <CityAutocomplete
                       value={fields.cidade}
-                      onChange={handleChange}
-                      placeholder="Ex: Vitória, ES"
+                      onChange={(val) => setFields((prev) => ({ ...prev, cidade: val }))}
+                      placeholder="Digite sua cidade..."
                       className={styles.cta__input}
-                      autoComplete="address-level2"
                       required
                     />
                   </div>
