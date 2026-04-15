@@ -17,7 +17,7 @@ const BENEFITS = [
     category: 'Liberdade',
     title: 'Zero Investimento Inicial',
     description:
-      'Comece hoje sem precisar investir. Sem estoque, sem risco financeiro. Você se relaciona — nós cuidamos de todo o resto.',
+      'Comece hoje sem precisar investir. Sem estoque, sem risco financeiro. Você se relaciona, nós cuidamos de todo o resto.',
   },
   {
     id: 3,
@@ -102,7 +102,7 @@ export default function Benefits() {
                   aria-expanded={openItem === i}
                 >
                   <span className={styles.benefits__accordionMeta}>
-                    {item.num} — {item.category}
+                    {item.num} · {item.category}
                   </span>
                   <span className={styles.benefits__accordionTitle}>{item.title}</span>
                   <span className={styles.benefits__accordionToggle} aria-hidden="true">

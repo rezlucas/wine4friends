@@ -48,7 +48,7 @@ export default function Header() {
 
         {/* CTA desktop */}
         <a href="#contato" className={`btn btn--primary ${styles.header__cta}`}>
-          Seja Embaixador
+          Seja um Friend
         </a>
 
         {/* Hamburger mobile */}
@@ -79,7 +79,7 @@ export default function Header() {
           ))}
           <li>
             <a href="#contato" className={`btn btn--primary ${styles.header__drawerCta}`} onClick={handleNavClick}>
-              Seja Embaixador
+              Seja um Friend
             </a>
           </li>
         </ul>

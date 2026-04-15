@@ -1,6 +1,5 @@
 import { Wine, Award, MapPin } from 'lucide-react';
 import styles from './About.module.scss';
-import WineBottleIcon from '../ui/WineBottleIcon';
 
 const PILLARS = [
   { icon: Wine,   label: 'Importação Própria',  desc: 'Controle total da origem à taça' },
@@ -33,15 +32,13 @@ export default function About() {
               <em>Você apresenta a exclusividade!</em>
             </h2>
 
-            <WineBottleIcon className={styles.about__separator} width={44} />
-
             <p className={styles.about__text}>
               A sua influência já define escolhas de vinhos que seus amigos compram.
               Transformamos essa autoridade que você tem em dinheiro.
             </p>
 
             <p className={styles.about__text}>
-              A <strong>Wine4Friends</strong> é uma marca do <strong>Grupo Uaine</strong> — o maior grupo
+              A <strong>Wine4Friends</strong> é uma marca do <strong>Grupo Uaine</strong>, o maior grupo
               enogastronômico do Espírito Santo, com mais de duas décadas de atuação e operação
               em vários estados do Brasil. Acesso direto a um portfólio importado e premiado,
               curado por quem entende do assunto.
@@ -63,7 +60,7 @@ export default function About() {
             </div>
 
             <a href="#contato" className="btn btn--primary">
-              Quero Ser Embaixador
+              Quero Ser um Friend
             </a>
           </div>
         </div>

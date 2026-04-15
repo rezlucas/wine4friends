@@ -7,7 +7,7 @@ const TESTIMONIALS = [
     role: 'Embaixadora há 1 ano · Vitória – ES',
     initials: 'AP',
     rating: 5,
-    text: 'Comecei sem saber nada de vendas. Em três meses já estava ganhando uma renda extra que faz diferença real no fim do mês. O suporte dos sommeliers é incrível — eles respondem na hora.',
+    text: 'Comecei sem saber nada de vendas. Em três meses já estava ganhando uma renda extra que faz diferença real no fim do mês. O suporte dos sommeliers é incrível, eles respondem na hora.',
   },
   {
     id: 2,

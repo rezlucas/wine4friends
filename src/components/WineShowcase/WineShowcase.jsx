@@ -44,7 +44,7 @@ export default function WineShowcase() {
 
         <div className={styles.showcase__grid}>
           {WINES.map(({ id, img, name, origin, badge }) => (
-            <div key={id} className={styles.showcase__card}>
+            <a key={id} href="#contato" className={styles.showcase__card}>
               <div
                 className={styles.showcase__cardImg}
                 style={{ backgroundImage: `url(${img})` }}
@@ -58,7 +58,7 @@ export default function WineShowcase() {
                   <span className={styles.showcase__cardOrigin}>{origin}</span>
                 </div>
               </div>
-            </div>
+            </a>
           ))}
         </div>
 

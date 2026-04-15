@@ -1,5 +1,4 @@
 import styles from './Lifestyle.module.scss';
-import WineBottleIcon from '../ui/WineBottleIcon';
 
 export default function Lifestyle() {
   return (
@@ -20,10 +19,8 @@ export default function Lifestyle() {
           <em>É conexão.</em>
         </h2>
 
-        <WineBottleIcon className={styles.lifestyle__separator} width={44} />
-
         <p className={styles.lifestyle__text}>
-          Cada garrafa carregada pela Wine4Friends foi escolhida a dedo — de vinhedos
+          Cada garrafa carregada pela Wine4Friends foi escolhida a dedo, de vinhedos
           premiados da Argentina, Portugal, Itália e além. Quando você se torna
           embaixador, não está apenas vendendo vinho: está compartilhando
           <strong> momentos únicos</strong> que ficam na memória.
@@ -31,7 +28,7 @@ export default function Lifestyle() {
 
         <p className={styles.lifestyle__text}>
           Nosso portfólio exclusivo chega com <strong>fichas técnicas, sugestões de
-          harmonização</strong> e todo o conhecimento de duas décadas do Grupo Uaine —
+          harmonização</strong> e todo o conhecimento de duas décadas do Grupo Uaine,
           para que você indique com confiança e seus clientes voltem sempre.
         </p>
 

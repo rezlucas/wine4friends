@@ -6,7 +6,7 @@ const STEPS = [
     title: 'Cadastre-se',
     subtitle: 'Rápido, sem burocracia',
     description:
-      'Preencha o formulário e entre para a pré-lista do programa. Aprovação rápida — você já recebe sua vitrine digital personalizada e pronta para vender.',
+      'Preencha o formulário e entre para a pré-lista do programa. Aprovação rápida, você já recebe sua vitrine digital personalizada e pronta para vender.',
   },
   {
     id: '02',
@@ -20,7 +20,7 @@ const STEPS = [
     title: 'Receba em Dinheiro',
     subtitle: 'Quanto mais vende, mais ganha',
     description:
-      'Comissões progressivas de 12% a 15% pagas em dinheiro real via PIX ou transferência. Quanto mais você vende, maior o percentual — e isso é o gancho para a próxima fase.',
+      'Comissões progressivas de 12% a 15% pagas em dinheiro real via PIX ou transferência. Quanto mais você vende, maior o percentual, e mais você ganha.',
   },
 ];
 
@@ -35,7 +35,7 @@ export default function Products() {
             <em style={{ fontStyle: 'italic', color: 'inherit' }}>Você se relaciona.</em>
           </h2>
           <p className="section__subtitle">
-            Você já indica vinhos para seus amigos. Agora ganhe por isso —
+            Você já indica vinhos para seus amigos. Agora ganhe por isso,
             sem estoque, sem burocracia, sem investimento inicial.
           </p>
         </div>

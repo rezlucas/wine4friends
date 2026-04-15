@@ -9,7 +9,7 @@ const LINKS = {
     { label: 'Depoimentos',          href: '#depoimentos' },
   ],
   suporte: [
-    { label: 'Seja um Embaixador',      href: '#contato' },
+    { label: 'Seja um Friend',           href: '#contato' },
     { label: 'Política de Privacidade', href: '#' },
     { label: 'Termos de Uso',           href: '#' },
     { label: 'Fale Conosco',            href: '#contato' },
@@ -37,7 +37,7 @@ export default function Footer() {
             com qualidade, credibilidade e renda real.
           </p>
           <p className={styles.footer__parent}>
-            Uma empresa do <strong>Grupo Uaine</strong> — o maior grupo enogastronômico
+            Uma empresa do <strong>Grupo Uaine</strong>, o maior grupo enogastronômico
             do Espírito Santo.
           </p>
           <div className={styles.footer__socials}>

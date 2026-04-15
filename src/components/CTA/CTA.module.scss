@@ -103,7 +103,7 @@
   &__desc {
     font-size: $font-size-md;
     line-height: $line-height-relaxed;
-    color: $color-text-muted;
+    color: $color-text-light;
   }
 
   &__list {
@@ -122,7 +122,7 @@
     gap: $spacing-3;
     font-family: $font-body;
     font-size: $font-size-sm;
-    color: $color-text-muted;
+    color: $color-text-light;
     line-height: $line-height-snug;
   }
 

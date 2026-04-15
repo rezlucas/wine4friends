@@ -2,7 +2,7 @@ import styles from './CTA.module.scss';
 import logo from '../../assets/logos/wine4friends-logo-negativa.png';
 
 const LIST_ITEMS = [
-  'Sem custo para entrar — zero investimento inicial',
+  'Sem custo para entrar, zero investimento inicial',
   'Comissões em dinheiro via PIX ou transferência',
   'Vitrine digital personalizada e pronta para usar',
   'Suporte de sommeliers para fechar mais vendas',
@@ -45,8 +45,8 @@ export default function CTA() {
               </h2>
 
               <p className={styles.cta__desc}>
-                Cadastre-se como Embaixador e inicie sua jornada.
-                As vagas do pré-lançamento são limitadas —
+                Cadastre-se como Friend e inicie sua jornada.
+                As vagas do pré-lançamento são limitadas,
                 os primeiros Friends terão condições especiais.
               </p>
 
