@@ -10,6 +10,13 @@ body {
   background-color: $color-bg;
 }
 
+// Previne scroll horizontal em qualquer dispositivo
+#root,
+main {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
 // Container
 .container {
   width: 100%;
@@ -69,6 +76,16 @@ body {
   &--primary  { @include btn-primary; }
   &--secondary { @include btn-secondary; }
   &--ghost    { @include btn-ghost-light; }
+
+  // Mobile: largura total e texto centralizado
+  @include respond-down(sm) {
+    &--primary,
+    &--secondary,
+    &--ghost {
+      width: 100%;
+      justify-content: center;
+    }
+  }
 }
 
 // Separator

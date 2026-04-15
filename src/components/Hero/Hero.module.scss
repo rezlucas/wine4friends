@@ -188,6 +188,10 @@
     display: flex;
     gap: $spacing-3;
     flex-wrap: wrap;
+
+    @include respond-down(sm) {
+      flex-direction: column;
+    }
   }
 
   // ── Big numbers strip ─────────────────────────────────────────────────────
