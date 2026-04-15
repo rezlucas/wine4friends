@@ -9,6 +9,13 @@
   overflow: hidden;
   background: $color-bg-dark;
 
+  // Desktop: imagem de fundo cobrindo toda a hero
+  @include respond-up(lg) {
+    background-image: url('../../assets/images/image-hero-desktop.webp');
+    background-size: cover;
+    background-position: center top;
+  }
+
   // ── Fundo atmosférico ─────────────────────────────────────────────────────
 
   &__bg {
@@ -17,7 +24,7 @@
     background:
       radial-gradient(ellipse 55% 65% at 25% 75%, rgba($color-primary, 0.22) 0%, transparent 55%),
       radial-gradient(ellipse 40% 50% at 75% 20%, rgba($color-primary-dark, 0.14) 0%, transparent 50%),
-      linear-gradient(160deg, #03030A 0%, #09060E 40%, #050309 100%);
+      linear-gradient(160deg, rgba(#03030A, 0.55) 0%, rgba(#09060E, 0.45) 40%, rgba(#050309, 0.55) 100%);
     pointer-events: none;
   }
 
@@ -84,36 +91,31 @@
   &__imageCol {
     position: relative;
     height: 680px;
-    margin-left: -$container-padding; // sangra até a borda
+    margin-left: -$container-padding;
+
+    // Desktop: oculto — imagem usada como background da hero
+    @include respond-up(lg) {
+      display: none;
+    }
 
     @include respond-down(lg) {
       height: 70vh;
       min-height: 420px;
       margin-left: -$container-padding-mobile;
       margin-right: -$container-padding-mobile;
-      order: 1; // aparece abaixo do texto
+      order: 1;
     }
   }
 
   &__imgPlaceholder {
     position: absolute;
     inset: 0;
-    background-image: url('../../assets/images/image-hero-desktop.webp');
+    background-image: url('../../assets/images/hero-taca.webp');
     background-size: cover;
     background-position: center top;
-    // Desktop: funde nas bordas laterais e verticais
-    mask-image:
-      linear-gradient(to right,  black 30%, transparent 95%),
-      linear-gradient(to bottom, transparent 2%, black 12%, black 85%, transparent 100%);
-    mask-composite: intersect;
-    -webkit-mask-image:
-      linear-gradient(to right,  black 30%, transparent 95%),
-      linear-gradient(to bottom, transparent 2%, black 12%, black 85%, transparent 100%);
-    -webkit-mask-composite: source-in;
 
-    // Mobile: volta para a imagem da taça, funde apenas no topo
+    // Mobile: funde apenas no topo
     @include respond-down(lg) {
-      background-image: url('../../assets/images/hero-taca.webp');
       mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 100%);
       -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 100%);
     }
@@ -125,6 +127,10 @@
     @include flex-column;
     gap: $spacing-6;
     padding-left: $spacing-8;
+
+    @include respond-up(lg) {
+      grid-column: 2; // força conteúdo na coluna direita
+    }
 
     @include respond-down(lg) {
       padding-left: 0;
