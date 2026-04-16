@@ -1,7 +1,7 @@
 import styles from './WineShowcase.module.scss';
 import vitrine1 from '../../assets/images/vitrine-1.webp';
-import vitrine2 from '../../assets/images/vitrine-2.webp';
-import vitrine3 from '../../assets/images/vritrine-3.webp';
+import familyVintage from '../../assets/images/qpa-family-vintage.webp';
+import vinhoVerde from '../../assets/images/qpa-vinho-verde.webp';
 
 const WINES = [
   {
@@ -13,16 +13,16 @@ const WINES = [
   },
   {
     id: 2,
-    img: vitrine2,
-    name: 'Gran Reserva',
-    origin: 'Portugal · Alentejo',
+    img: familyVintage,
+    name: 'Family Vintage',
+    origin: 'Chile · Valle del Maipo',
     badge: 'Exclusivo',
   },
   {
     id: 3,
-    img: vitrine3,
-    name: 'Branco Seco',
-    origin: 'Itália · Toscana',
+    img: vinhoVerde,
+    name: 'Vinho Verde',
+    origin: 'Portugal · Minho',
     badge: 'Novidade',
   },
 ];
