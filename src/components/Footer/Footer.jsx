@@ -40,13 +40,6 @@ export default function Footer() {
             Uma empresa do <strong>Grupo Uaine</strong>, o maior grupo enogastronômico
             do Espírito Santo.
           </p>
-          <div className={styles.footer__socials}>
-            {SOCIALS.map(({ label, href, icon }) => (
-              <a key={label} href={href} className={styles.footer__socialLink} aria-label={label}>
-                {icon}
-              </a>
-            ))}
-          </div>
         </div>
 
         {/* Links */}
