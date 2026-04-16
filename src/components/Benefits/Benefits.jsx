@@ -150,9 +150,7 @@ export default function Benefits() {
                 key={range}
                 className={`${styles.benefits__commissionCard} ${featured ? styles['benefits__commissionCard--featured'] : ''}`}
               >
-                {featured && (
-                  <span className={styles.benefits__commissionTag}>Mais Popular</span>
-                )}
+
                 <span className={styles.benefits__commissionPct}>{pct}</span>
                 <span className={styles.benefits__commissionDivider} aria-hidden="true" />
                 <span className={styles.benefits__commissionRange}>{range}</span>

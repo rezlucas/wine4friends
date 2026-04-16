@@ -2,8 +2,8 @@ import styles from './Hero.module.scss';
 
 const STATS = [
   { value: '+20',     label: 'Anos de Mercado' },
-  { value: '50+',     label: 'Rótulos Disponíveis' },
   { value: 'Até 15%', label: 'de Comissão' },
+  { value: '50+',     label: 'Rótulos Disponíveis' },
 ];
 
 export default function Hero() {
