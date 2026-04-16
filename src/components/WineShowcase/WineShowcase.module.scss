@@ -30,7 +30,7 @@
     cursor: pointer;
 
     @include respond-down(md) { aspect-ratio: 4 / 3; }
-    @include respond-down(sm) { aspect-ratio: 16 / 9; }
+    @include respond-down(sm) { aspect-ratio: 3 / 4; }
 
     &:hover {
       .showcase__cardImg { transform: scale(1.06); }
