@@ -27,6 +27,23 @@ html {
   color: #C98046;
 }
 
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #06060C;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #C98046;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #A86234;
+}
+
 body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
