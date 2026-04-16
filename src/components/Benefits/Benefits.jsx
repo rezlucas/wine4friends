@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Wine } from 'lucide-react';
 import styles from './Benefits.module.scss';
 import lifestyleImg from '../../assets/images/hero-vinho.webp';
 
@@ -61,9 +62,9 @@ const COMMISSIONS = [
 ];
 
 const COMMISSION_BULLETS = [
-  { icon: '◆', text: 'Parcelamento em até 4x para seus clientes' },
-  { icon: '◆', text: 'Renda extra recorrente' },
-  { icon: '◆', text: 'Trabalhe de onde estiver' },
+  'Parcelamento em até 4x para seus clientes',
+  'Renda extra recorrente',
+  'Trabalhe de onde estiver',
 ];
 
 export default function Benefits() {
@@ -159,9 +160,9 @@ export default function Benefits() {
           </div>
 
           <div className={styles.benefits__commissionBullets}>
-            {COMMISSION_BULLETS.map(({ icon, text }) => (
+            {COMMISSION_BULLETS.map((text) => (
               <span key={text} className={styles.benefits__commissionBullet}>
-                <span className={styles.benefits__commissionBulletIcon}>{icon}</span>
+                <Wine size={14} strokeWidth={1.5} className={styles.benefits__commissionBulletIcon} />
                 {text}
               </span>
             ))}
