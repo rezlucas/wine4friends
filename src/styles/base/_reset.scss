@@ -17,6 +17,16 @@ html {
   overflow-x: hidden;
 }
 
+::selection {
+  background: #8B1A35;
+  color: #C98046;
+}
+
+::-moz-selection {
+  background: #8B1A35;
+  color: #C98046;
+}
+
 body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
