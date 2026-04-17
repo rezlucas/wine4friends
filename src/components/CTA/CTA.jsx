@@ -3,8 +3,8 @@ import styles from './CTA.module.scss';
 import logo from '../../assets/logos/wine4friends-logo-negativa.png';
 import CityAutocomplete from '../ui/CityAutocomplete';
 
-// Cole aqui a URL gerada no Google Apps Script após a implantação
 const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxrhMnfehuy_tnkJhHtu3pbObii52iQgg3oWYQunTVRE6sqfVvB92v1PnL3WDSGZ1Kv/exec';
+const WHATSAPP_GROUP  = 'https://chat.whatsapp.com/ErFUbZlGDEBJyBMlzJAKKy';
 
 const LIST_ITEMS = [
   'Sem custo para entrar, zero investimento inicial',
@@ -15,7 +15,16 @@ const LIST_ITEMS = [
   'Logística especializada em todo o Brasil',
 ];
 
-const INITIAL = { nome: '', telefone: '', email: '', cidade: '' };
+const PERFIS = [
+  'Apreciador Casual — bebo socialmente mas sem aprofundamento',
+  'Entusiasta — gosto de explorar rótulos e harmonizações',
+  'Colecionador — invisto em vinho e acompanho o mercado',
+  'Profissional do setor — trabalho com gastronomia ou eventos',
+  'Iniciante — estou descobrindo o mundo dos vinhos agora',
+  'Criador de conteúdo — compartilho experiências online',
+];
+
+const INITIAL = { nome: '', telefone: '', email: '', cidade: '', perfil: '' };
 
 export default function CTA() {
   const [fields, setFields] = useState(INITIAL);
@@ -37,6 +46,10 @@ export default function CTA() {
       });
       setStatus('success');
       setFields(INITIAL);
+      // Redireciona para o grupo do WhatsApp após 1.5s
+      setTimeout(() => {
+        window.open(WHATSAPP_GROUP, '_blank', 'noopener,noreferrer');
+      }, 1500);
     } catch {
       setStatus('error');
     }
@@ -50,11 +63,7 @@ export default function CTA() {
         <div className={styles.cta__quoteBg} aria-hidden="true" />
         <div className={styles.cta__quoteOverlay} aria-hidden="true" />
         <div className={styles.cta__quoteContent}>
-          <img
-            src={logo}
-            alt="Wine4Friends"
-            className={styles.cta__quoteLogo}
-          />
+          <img src={logo} alt="Wine4Friends" className={styles.cta__quoteLogo} />
           <blockquote className={styles.cta__quoteText}>
             "Transforme momentos entre amigos<br />em uma fonte de renda."
           </blockquote>
@@ -102,7 +111,15 @@ export default function CTA() {
                 <div className={styles.cta__success}>
                   <span className={styles.cta__successIcon}>✓</span>
                   <strong>Cadastro realizado!</strong>
-                  <p>Entraremos em contato em breve pelo WhatsApp ou e-mail informado.</p>
+                  <p>Redirecionando para o grupo exclusivo do WhatsApp...</p>
+                  <a
+                    href={WHATSAPP_GROUP}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`btn btn--primary ${styles.cta__whatsappBtn}`}
+                  >
+                    Entrar no Grupo do WhatsApp →
+                  </a>
                 </div>
               ) : (
                 <form className={styles.cta__form} onSubmit={handleSubmit}>
@@ -157,6 +174,33 @@ export default function CTA() {
                       className={styles.cta__input}
                       required
                     />
+                  </div>
+
+                  {/* Radio — perfil com vinhos */}
+                  <div className={styles.cta__field}>
+                    <label className={styles.cta__label}>Qual melhor descreve sua relação com vinhos?</label>
+                    <div className={styles.cta__radioGroup}>
+                      {PERFIS.map((perfil) => (
+                        <label key={perfil} className={styles.cta__radioItem}>
+                          <input
+                            type="radio"
+                            name="perfil"
+                            value={perfil}
+                            checked={fields.perfil === perfil}
+                            onChange={handleChange}
+                            className={styles.cta__radioInput}
+                            required
+                          />
+                          <span
+                            className={`${styles.cta__radioCustom} ${fields.perfil === perfil ? styles['cta__radioCustom--checked'] : ''}`}
+                            aria-hidden="true"
+                          />
+                          <span className={`${styles.cta__radioLabel} ${fields.perfil === perfil ? styles['cta__radioLabel--checked'] : ''}`}>
+                            {perfil}
+                          </span>
+                        </label>
+                      ))}
+                    </div>
                   </div>
 
                   {status === 'error' && (

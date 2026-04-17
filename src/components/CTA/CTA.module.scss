@@ -218,6 +218,68 @@
     letter-spacing: $letter-spacing-wide;
   }
 
+  // ── Radio group ──────────────────────────────────────────────────────────
+
+  &__radioGroup {
+    @include flex-column;
+    gap: $spacing-2;
+    margin-top: $spacing-1;
+  }
+
+  &__radioItem {
+    display: flex;
+    align-items: flex-start;
+    gap: $spacing-3;
+    cursor: pointer;
+    padding: $spacing-2 0;
+  }
+
+  &__radioInput {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  &__radioCustom {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 1.5px solid rgba($color-text-on-dark, 0.25);
+    background: transparent;
+    flex-shrink: 0;
+    margin-top: 2px;
+    transition: border-color $transition-fast, background $transition-fast, box-shadow $transition-fast;
+
+    &--checked {
+      border-color: $color-secondary;
+      background: $color-secondary;
+      box-shadow: inset 0 0 0 3px $color-surface;
+    }
+  }
+
+  &__radioLabel {
+    font-family: $font-body;
+    font-size: $font-size-sm;
+    color: $color-text-light;
+    line-height: $line-height-snug;
+    transition: color $transition-fast;
+
+    &--checked {
+      color: $color-text-on-dark;
+    }
+  }
+
+  &__radioItem:hover &__radioCustom:not(#{&}__radioCustom--checked) {
+    border-color: rgba($color-secondary, 0.60);
+  }
+
+  &__whatsappBtn {
+    width: 100%;
+    justify-content: center;
+    margin-top: $spacing-2;
+  }
+
   &__errorMsg {
     font-family: $font-body;
     font-size: $font-size-sm;
