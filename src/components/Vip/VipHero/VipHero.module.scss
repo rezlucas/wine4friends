@@ -9,12 +9,13 @@
   overflow: hidden;
   background: $color-bg-dark;
 
-  &__bg {
+  &__video {
     position: absolute;
     inset: 0;
-    background-image: url('../../../assets/images/hero-vinho.webp');
-    background-size: cover;
-    background-position: center;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
   }
 
   &__overlay {

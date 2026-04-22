@@ -1,10 +1,19 @@
 import styles from './VipHero.module.scss';
 import logo from '../../../assets/logos/wine4friends-logo-negativa.png';
+import heroBg from '../../../assets/wine-primium-background-hero.mp4';
 
 export default function VipHero() {
   return (
     <section className={styles.hero}>
-      <div className={styles.hero__bg} aria-hidden="true" />
+      <video
+        className={styles.hero__video}
+        src={heroBg}
+        autoPlay
+        muted
+        loop
+        playsInline
+        aria-hidden="true"
+      />
       <div className={styles.hero__overlay} aria-hidden="true" />
 
       <div className={`container ${styles.hero__inner}`}>
