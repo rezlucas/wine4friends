@@ -1,10 +1,10 @@
-import { Wine, Award, MapPin } from 'lucide-react';
+import { Grape, Medal, Globe2 } from 'lucide-react';
 import styles from './VipAbout.module.scss';
 
 const PILLARS = [
-  { icon: Wine,   label: 'Importação Própria',  desc: 'Controle total da origem à taça' },
-  { icon: Award,  label: 'Rótulos Premiados',   desc: 'Portfólio exclusivo e selecionado' },
-  { icon: MapPin, label: 'Espírito Santo',       desc: 'Nascidos e expandidos no ES' },
+  { icon: Grape,  label: 'Importação Própria',  desc: 'Controle total da origem à taça' },
+  { icon: Medal,  label: 'Rótulos Premiados',   desc: 'Portfólio exclusivo e selecionado' },
+  { icon: Globe2, label: 'Espírito Santo',       desc: 'Nascidos e expandidos no ES' },
 ];
 
 export default function VipAbout() {
