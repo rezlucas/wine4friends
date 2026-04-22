@@ -32,6 +32,12 @@ export default function VipBenefits() {
             </div>
           ))}
         </div>
+
+        <div style={{ textAlign: 'center', marginTop: '2.5rem' }}>
+          <a href="#entrar" className="btn btn--primary">
+            Garantir Meu Acesso VIP →
+          </a>
+        </div>
       </div>
     </section>
   );

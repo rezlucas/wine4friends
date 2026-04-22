@@ -54,6 +54,10 @@ export default function VipAbout() {
                 </div>
               ))}
             </div>
+
+            <a href="#entrar" className="btn btn--primary">
+              Quero Entrar no Clube →
+            </a>
           </div>
         </div>
       </div>

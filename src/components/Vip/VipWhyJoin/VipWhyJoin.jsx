@@ -51,6 +51,12 @@ export default function VipWhyJoin() {
             </div>
           ))}
         </div>
+
+        <div style={{ textAlign: 'center', marginTop: '2.5rem' }}>
+          <a href="#entrar" className="btn btn--primary">
+            Quero Fazer Parte →
+          </a>
+        </div>
       </div>
     </section>
   );
