@@ -1,3 +1,4 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './styles/main.scss';
 
 import Header       from './components/Header/Header';
@@ -9,12 +10,14 @@ import Benefits     from './components/Benefits/Benefits';
 import WineShowcase from './components/WineShowcase/WineShowcase';
 import CTA          from './components/CTA/CTA';
 import Footer       from './components/Footer/Footer';
+import Testimonials from './components/Testimonials/Testimonials';
 
-export default function App() {
+import VipPage from './pages/VipPage';
+
+function MainPage() {
   return (
     <>
       <Header />
-
       <main>
         <Hero />
         <About />
@@ -22,10 +25,21 @@ export default function App() {
         <Products />
         <Benefits />
         <WineShowcase />
+        <Testimonials />
         <CTA />
       </main>
-
       <Footer />
     </>
+  );
+}
+
+export default function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/"    element={<MainPage />} />
+        <Route path="/vip" element={<VipPage />} />
+      </Routes>
+    </BrowserRouter>
   );
 }

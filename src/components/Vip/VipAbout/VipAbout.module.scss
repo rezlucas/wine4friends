@@ -1,0 +1,138 @@
+@use '../../../styles/abstracts/variables' as *;
+@use '../../../styles/abstracts/mixins' as *;
+
+.about {
+  background: $color-bg;
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: $spacing-9;
+    align-items: center;
+
+    @include respond-down(md) {
+      grid-template-columns: 1fr;
+      gap: $spacing-7;
+    }
+  }
+
+  &__imageWrap {
+    position: relative;
+
+    @include respond-down(md) { order: 2; }
+  }
+
+  &__img {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    background-image: url('../../../assets/images/sobre-pessoas.webp');
+    background-size: cover;
+    background-position: center;
+  }
+
+  &__badge {
+    position: absolute;
+    bottom: $spacing-4;
+    right: $spacing-4;
+    background: $color-secondary;
+    color: $color-bg-dark;
+    padding: $spacing-4 $spacing-5;
+    @include flex-column;
+    align-items: center;
+    text-align: center;
+    box-shadow: $shadow-xl;
+
+    strong {
+      font-family: $font-heading;
+      font-size: $font-size-2xl;
+      font-weight: $font-weight-bold;
+      line-height: 1;
+    }
+
+    span {
+      font-family: $font-body;
+      font-size: $font-size-xs;
+      font-weight: $font-weight-medium;
+      letter-spacing: $letter-spacing-wide;
+      text-transform: uppercase;
+      margin-top: $spacing-1;
+    }
+  }
+
+  &__body {
+    @include flex-column;
+    gap: $spacing-5;
+    align-items: flex-start;
+
+    @include respond-down(md) { order: 1; }
+  }
+
+  &__title {
+    font-family: $font-heading;
+    font-size: $font-size-2xl;
+    font-weight: $font-weight-bold;
+    line-height: $line-height-snug;
+    color: $color-text;
+
+    em {
+      font-style: italic;
+      color: $color-secondary;
+    }
+
+    @include respond-down(md) { font-size: $font-size-xl; }
+  }
+
+  &__text {
+    font-size: $font-size-md;
+    line-height: $line-height-relaxed;
+    color: $color-text-muted;
+
+    strong {
+      color: $color-text;
+      font-weight: $font-weight-semibold;
+    }
+  }
+
+  &__pillars {
+    @include flex-column;
+    gap: $spacing-4;
+    width: 100%;
+    border-top: 1px solid $color-border;
+    padding-top: $spacing-5;
+  }
+
+  &__pillar {
+    display: flex;
+    align-items: center;
+    gap: $spacing-4;
+
+    > div { @include flex-column; gap: 2px; }
+  }
+
+  &__pillarIcon {
+    font-size: 1.5rem;
+    width: 44px;
+    height: 44px;
+    background: rgba($color-primary, 0.15);
+    border: 1px solid rgba($color-primary, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: $color-secondary;
+  }
+
+  &__pillarLabel {
+    font-family: $font-body;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-semibold;
+    color: $color-text;
+  }
+
+  &__pillarDesc {
+    font-family: $font-body;
+    font-size: $font-size-xs;
+    color: $color-text-muted;
+    letter-spacing: $letter-spacing-wide;
+  }
+}
