@@ -144,6 +144,8 @@
     border-bottom: 1px solid $color-border;
     @include flex-column;
     gap: $spacing-1;
+
+    @include respond-down(sm) { padding: $spacing-4 $spacing-5; }
   }
 
   &__formTitle {
@@ -166,6 +168,8 @@
     padding: $spacing-7;
     @include flex-column;
     gap: $spacing-4;
+
+    @include respond-down(sm) { padding: $spacing-5; gap: $spacing-3; }
   }
 
   &__field {
@@ -295,6 +299,8 @@
     align-items: center;
     text-align: center;
     gap: $spacing-4;
+
+    @include respond-down(sm) { padding: $spacing-7 $spacing-5; }
   }
 
   &__successIcon {
