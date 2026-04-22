@@ -21,7 +21,7 @@ export default function VipHero() {
 
         <p className={styles.hero__subtitle}>
           Promoções exclusivas, lançamentos antecipados e experiências
-          únicas com os melhores vinhos importados do Brasil —
+          únicas com os melhores vinhos importados do Brasil,
           disponíveis apenas para membros selecionados.
         </p>
 

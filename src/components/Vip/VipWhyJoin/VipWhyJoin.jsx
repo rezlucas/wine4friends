@@ -5,7 +5,7 @@ const REASONS = [
   {
     icon: Wine,
     title: 'Vinhos que não chegam ao supermercado',
-    desc: 'Acesso a rótulos importados exclusivos, curados pelos sommeliers do Grupo Uaine — vinhos que seus amigos nunca encontraram antes.',
+    desc: 'Acesso a rótulos importados exclusivos, curados pelos sommeliers do Grupo Uaine, vinhos que seus amigos nunca encontraram antes.',
   },
   {
     icon: Star,
