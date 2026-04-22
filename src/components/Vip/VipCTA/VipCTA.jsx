@@ -4,7 +4,7 @@ import logo from '../../../assets/logos/wine4friends-logo-negativa.png';
 import CityAutocomplete from '../../ui/CityAutocomplete';
 
 // Substitua pela URL do Apps Script do VIP (pode ser a mesma planilha em outra aba)
-const APPS_SCRIPT_URL = 'COLE_A_URL_DO_APPS_SCRIPT_VIP';
+const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxrhMnfehuy_tnkJhHtu3pbObii52iQgg3oWYQunTVRE6sqfVvB92v1PnL3WDSGZ1Kv/exec';
 // Substitua pelo link do grupo VIP do WhatsApp
 const WHATSAPP_VIP = 'COLE_O_LINK_DO_GRUPO_VIP';
 
