@@ -28,7 +28,10 @@
     font-family: $font-heading;
     font-size: $font-size-3xl;
     font-weight: $font-weight-bold;
-    color: rgba($color-secondary, 0.20);
+    background: linear-gradient(135deg, $color-secondary 0%, rgba($color-secondary, 0.40) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     line-height: 1;
     flex-shrink: 0;
     width: 52px;
